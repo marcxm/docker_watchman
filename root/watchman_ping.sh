@@ -34,7 +34,7 @@ fi
 
 while [ true ]; do
   sleep $s
-  nc -w 4 -vz $i 22 > /dev/null
+  fping -r 1 $i > /dev/null
   if [ $? -eq 1 ]; then
     printf "`date`: $n IP: $i is DOWN.\n" >> /root/watchman_ping_history.log                                                                           
       if test -f /root/$n"_down"; then
