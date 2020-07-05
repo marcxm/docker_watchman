@@ -41,14 +41,14 @@ while [ true ]; do
         echo "not sending another mail."
       else
         echo `date` > mail
-        echo "$i is DOWN!" | mutt -s "$i is DOWN!" $m
+        echo "$i - $n is DOWN!" | mutt -s "$i is DOWN!" $m
         touch /root/$n"_down"
       fi                                                                                                          
     else
       if test -f /root/$n"_down"; then
         rm /root/$n"_down"                                                                                                                             
         printf "`date`: $n with IP: $i is UP AGAIN.\n" >> /root/watchman_ping_history.log
-        echo "$i is DOWN!" | mutt -s "$i is UP AGAIN!" $m
+        echo "$i -$n is DOWN!" | mutt -s "$i is UP AGAIN!" $m
       else                                                                                                                              
       printf "`date`: $n with IP: $i is UP.\n" >> /root/watchman_ping_history.log                                                                             
       fi
