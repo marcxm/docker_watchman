@@ -48,7 +48,7 @@ while [ true ]; do
       if test -f /root/$n"_down"; then
         rm /root/$n"_down"                                                                                                                             
         printf "`date`: $n with IP: $i is UP AGAIN.\n" >> /root/watchman_ping_history.log
-        echo "$i -$n is DOWN!" | mutt -s "$i - $n is UP AGAIN!" $m
+        echo "$i - $n is DOWN!" | mutt -s "$i - $n is UP AGAIN!" $m
       else                                                                                                                              
       printf "`date`: $n with IP: $i is UP.\n" >> /root/watchman_ping_history.log                                                                             
       fi
