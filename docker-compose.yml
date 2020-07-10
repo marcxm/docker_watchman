@@ -6,6 +6,8 @@ services:
     build: .
     image: "watchman:latest"
     hostname: watchman
+    environment:
+      - TZ=Europe/Warsaw
     restart: "no"
     container_name: "watchman"
     networks:
